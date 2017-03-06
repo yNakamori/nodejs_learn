@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    div(class='navbar navbar-default navbar-fixed-top') #{login_user}
+    h1= title
+
+        form(method='post', action='/display')
+            input(type='text', name='message_content', value='', id="input_message")
+            button(type='submit', class='btn btn-default', id='send_message') 書き込み
+
+    div(id="message_area")
+        each val in msg
+            hr
+            p(id='message') #{val.message}
+            p(id='username') 投稿者名     #{val.username}
+    div= error_message
+    div(class='header page-header')
+    a(href='/', class='btn btn-default') TOPへ戻る
