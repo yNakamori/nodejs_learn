@@ -1,0 +1,18 @@
+extends layout
+block content
+    div(class='navbar navbar-default navbar-fixed-top')
+    h1= title
+    form(action='/login', method='post')
+        div(class='container')
+            div(class='row')
+                div(class='col-lg-2') username
+                    input(type='text', name='username', value='yusuke' maxlength=30)
+                    br
+            div(class='row')
+                div(class='col-lg-2') password
+                    input(type='password', name='userpw', value='0000', maxlength=16)
+                    br
+                    br
+            button(type='submit', class='btn btn-default', id='sendBt') SEND
+                br
+            div= error_message
